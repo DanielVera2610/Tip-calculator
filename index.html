@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Tip calculator app</title> 
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  
+</head>
+<body>
+<div class="logo"><img src="images/logo.svg"></div> <!--División para el logo de la parte superior (SPLITTER) -->
+<div class="calculadora"> <!--División principal, donde se encuentran todos los elementos de la calculadora -->
+  <div class="parteUno"> <!--División para la primera parte de los elementos de la calculadora -->
+      <label for=""> Bill </label> <!--Etiqueta que indica donde se coloca el valor de la cuenta -->
+      <input type = "number" class="valorcuenta" id="cuenta"> <!--Espacio para colocar datos, en este caso el valor de la cuenta, por eso son valores numericos los que se especifican -->
+      <label for=""> Select Tip % </label> <!--Etiqueta que indica el espacio donde se selecciona el porcentaje de propina que desea pagarse, pueden ser porcentajes predeterminados o uno personalizado por el usuario -->
+      <div class="propina"> <!--División donde se encuentran los elementos para seleccionar un porcentaje de propina o ingresar uno en especifico -->
+      <div class="propinas propina5">  5% </div> <!--División para el porcentaje del 5% de propina -->
+      <div class="propinas propina10"> 10% </div> <!--División para el porcentaje del 10% de propina -->
+      <div class="propinas propina15 propina-activa"> 15%</div> <!--División para el porcentaje del 15% de propina, se puso propina activa para poder identificar que ese elemento es el que estará seleccionado por defecto, luego se trabajará en el css para marcarlo -->
+      <div class="propinas propina25"> 25% </div> <!--División para el porcentaje del 25% de propina -->
+      <div class="propinas propina50"> 50% </div> <!--División para el porcentaje del 50% de propina -->
+      <div class="custom"><input type="number" class="custom" placeholder="CUSTOM"></div> <!--División para el porcentaje personalizado de propina, es decir, ingresado por el usuario, la propiedad "placeholder ", permite definir algun valor por defecto para mostrar dentro del input, en este caso dice "Custom" -->
+      </div> <!-- Aqui se cierra la división de Propina -->
+      <div class="personas"> <!--División para colocar el número de personas que aportarán a la propina  -->
+        <label for="">  Number of People </label> <!--Etiqueta que indica el espacio para colocar el número de personas entre los cuales se dividira la propina -->
+      </div> <!--Aqui se cierra la división de personas -->
+      <input type="number" class="input-personas"/> <!--Espacio para colocar datos, en este caso de tipo numerico, donde se indica el numero de personas que aportarán al pago de las propinas  -->
+      </div> <!--Aquí se cierra la división de parteUno -->
+
+      <div class="resultado"> <!--División para mostrar los resultados de los calculos del pago de propina por persona y el total del pago de la cuenta por persona(incluida la propina) -->
+        <div class="propina-cantidad"> <!--División para la cantidad de propina por persona  -->
+          <div class="text"> <!--División para el texto de la cantidad de propina por persona (Tip Amount/Person)-->
+            <p> Tip Amount </p> <!--Parrafo que indica la cantidad de propina  -->
+            <p class="persona"> / person</p> <!--Parrafo que indica la cantidad de propina por persona  -->
+          </div> <!--Aquí se cierra la división de text -->
+          <div class="totalamount">$0.00</div> <!--División para los datos del total de la propina por persona, esto puede variar con el js  -->
+        </div> <!--Aquí se cierra la división de propina-cantidad  -->
+        <div class="Total"> <!--División para la cantidad de pago de la cuenta por persona (incluida la propina)  -->
+          <div class="text"> <!--División para el texto de la cantidad total de la cuenta  por persona, incluida la propina (Tip Total/Person)-->
+            <p> Total </p> <!--Parrafo que indica la cantidad total de la cuenta  -->
+            <p class="persona"> / person</p> <!--Parrafo que indica la cantidad de la cuenta por persona  -->
+          </div> <!--Aquí se cierra la división de text  -->
+          <div class="total">$0.00</div> <!--División para los datos del total de la cuenta por persona más la propina, esto puede cambiar con el js  -->
+        </div> <!--Aquí se cierra la división de Total  -->
+        <div class="reset"> Reset</div> <!--División para el boton de reset, también se pudo haber trabajado con button, al igual que las propinas  -->
+      </div> <!--Aquí se cierra la división de resultado  -->
+</div><!--Aquí se cierra la división de calculadora  -->
+  
+ <!-- <p>Hola</p>
+<p>Adios</p>
+-->
+  <div class="attribution"> <!--División que muestra información acerca del proyecto, como la referencia a la página de frontmentor y el nombre de la persona que codifico la página  -->
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. <!--Referencia que muestra la página donde se aloja el reto  -->
+    Coded by <a href="#">Daniel Vera </a>. <!--Referencia que muestra el nombre de la persona que codifico la página   -->
+  </div> <!--Aquí se cierra la división de attribution  -->
+  <script src="calculator.js"> </script> <!--Aquí se hace referencia al archivo js, en el cual se puede agregar interacción a las páginas  -->
+</body> <!--Aquí se cierra la etiqueta de body  -->
+</html><!--Aquí se cierra la etiqueta de html  -->

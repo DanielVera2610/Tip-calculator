@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+/*Selector Universal.- Se utiliza para seleccionar todos los elementos de la página  */
+*{ 
+    margin: 0; /*Permite establecer un margen( del elemento hacia afuera) en las 4 posiciones de un elemento, si no se especifica un margen especifico, se usará el mismo valor para todas las posiciones (LEFT, RIGHT, TOP, BOTTOM) */
+    padding: 0; /* El padding es el espacio existente entre el contenido de un elemento y su borde, practicamente es lo contrario al margen, o con un funcionamiento parecido */
+}
+
+/*Se hace referencia a la etiqueta body, el contenedor principal de todos los elementos de la página web que son accesibles por los usuarios */
+body{
+    height: 100vh; /*Indica el alto de un elemento, en este caso el alto de nuestra página, se uso vh, que es una medida del alto de la pantalla (viewportheight), cada unidad de vh representa una centesima parte de la altura de la pantalla de visualización, en este caso se puso 100, lo que indica que nuestra página cubrirá el 100 por ciento de la pantalla */
+    width: 100%; /*Indica el ancho de un elemento, en este caso, el ancho de nuestra página, se usó %, que es otra unidad de medidad en base al porventaje total de anchura de la pantalla, aunque tambien pudo haber sido vw */
+    background-color: hsl(185, 41%, 84%); /* Indica el color de fondo de la página, se uso la paleta de colores de hsl, de acuerdo a la guía de estilos, el hsl se forma con 3 parámetros; matiz, saturación y luminosidad, la combinación de estos 3 parametros da un color en especifico */
+    font-family: "Space Mono", monospace; /* Font family indica un estilo de letra para un elemento especifico, en este caso se importo la familia SPACE Mono*/
+}
+/* Se hace referencia a la clase logo, que es un div donde va la imagen logotipo*/
+.logo{
+    text-align: center; /* Establece la alineación de los elementos contenidos en un bloque, no solo texto, también imagenes, por lo que se usa en la clase de logo, que contiene una imagen*/
+    margin: 1.7rem 0 2.3rem; /* En este caso se uso la unidad de medida rem que es la que toma el valor del font size del conenedor raiz(:root), que em este caso es el body, pero como no tiene un font size asignado, el navegador asigna como predeterminado un valor de 16px, por lo que un rem equivaldría a eso */
+}
+/* Se hace referencia a la clase calculadora, que es básicamente el contenedor principal */
+.calculadora{
+    background-color: white; 
+    display: flex;/*Ayuda a posicionar los elementos, como elementos in line, pero se aplica a los contenedores, no a los elementos por separado */
+    flex-direction: column;/*Indica la dirección de los elementos que se encuentran en un contenedor, pueden ser acomodados respecto a las filas o columnas y también con -reverse se puede invertir el orden de los elementos */
+    padding: 2rem;
+    border-radius: 1.4rem;/*Se usa para darle contorno a un borde de algún elemento, es decir, para redondear sus orillas, se pueden añadir diversos valores para redondear todas las orillas de forma distinta, o dejar un solo valor definido que cubrirá las 4 orillas*/
+}
+
+label{
+    color: hsl(186, 14%, 43%);
+    font-family: 700; 
+    margin-bottom: 0.3rem; /*Margen con respecto a la parte inferior del  contenedor padre*/
+}
+
+input{
+    border: none; /*En los inputs por defecto viene un border, que es como un margen remarcado, pero por dentro del elemento, por eso en este caso se le quita el border al input, por estética  */
+    outline: none;/*Es prácticamente igual al border, igual viene por defecto en los inputs, pero este se remarca por fuera del elemento*/
+    padding: 5px 10px 5px 5px; 
+    background-position: 17px 15px; /*Indica la posicion del fondo,segun un determinado elemento*/
+    background-repeat: no-repeat; /*Ayuda a evitar que la imagen de fondo, se repita hasta cubrir el tamaño del elemento*/
+    background-color: hsl(189, 41%, 97%); /*Indica un color de fondo, en este caso es el verde de los inputs*/
+    text-align: right; 
+    font-size: 24px;
+    color: hsl(183, 100%, 15%);
+    font-weight: bolder; /*Indica el peso, o "remarcado" de un tipo de texto, en este caso, bolder es para tipo de texto en negritas*/
+    font-family: "Space Mono", monospace;
+
+}
+
+.valorcuenta{
+    background-image: url('images/icon-dollar.svg'); /*Se indica la ruta de la imagen de fondo del input donde se coloca el valor de la cuenta*/
+    margin-bottom: 36px;
+}
+
+.propina{
+    margin-top: 0.7rem;
+    display: grid;/* Se cambian los elementos a tipos de elementos de celdas, que se encuentran dentro de su contenedor padre*/
+    grid-template-columns: 144px 144px; /*Se usa para modificar el tamaño de las celdas, pero manejandolas como columnas */
+    row-gap: 2em; /*Es el espacio que existe entre canales o más bien entre las celdas del grid,pero tomando en cuenta la separacion de las filas, osea separa las propinas horizontalmente, el em es una unidad de medida parecida al rem, solo que hereda el tamaño de medidad del font size definido para su contenedor padre*/
+    column-gap: 18px; /*Es el espacio que existe entre canales o celdas del grid, pero las separa teniendo en cuenta las columnas, osea verticalmente */
+    margin-bottom: 2rem;
+}
+
+.propinas{
+    background-color: hsl(183, 100%, 15%); 
+    color: white;
+    height: 40px;
+    display: flex;
+    justify-content: center; /*Justifica , es decir, pone bajo las mismas reglas de medida los elementos seleccionados havia el centro del elemento contenedor*/
+    align-items: center; /*Alinea los elementos al centro de su contendor padre*/
+    font-size: 24px;
+    border-radius: 4px;
+    cursor: pointer; /*Cambia el tipo de cursor cuando se posiciona sobre el elemento especificado*/
+}
+
+.propina-activa{
+color: hsl(183, 100%, 15%);
+background-color: hsl(172, 67%, 45%);
+font-weight: bolder; /*Indica el peso, o "remarcado" de un tipo de texto, en este caso, bolder es para tipo de texto en negritas*/
+}
+
+.input-personas{
+    background-image: url("images/icon-person.svg");
+    margin-bottom: 2.4rem;
+}
+
+.resultado{
+    background-color: hsl(183, 100%, 15%);
+    color: white;
+    padding: 39px 21px;
+    border-radius: 12px;
+}
+
+.propina-cantidad, .Total{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.7rem;
+}
+
+.persona{
+    font-size: 12px;
+    color: hsl(184, 14%, 56%);
+    font-weight: 700;
+
+}
+
+.totalamount, .total{
+    font-size: 28px;
+    color: hsl(172, 67%, 45%);
+    font-weight: 700;
+}
+
+.reset{
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    color: hsl(183, 100%, 15%);
+    background-color: hsl(172, 67%, 45%);
+    padding: 9px 0 9px 0;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+.custom input{
+    box-sizing: border-box; /*Se usa para cambiar el modelo de caja definido por los navegadores, ayuda para manejar de una mejor forma el padding y margin sin alterar el tamaño original del elemento*/
+    width: 100%;
+}
+
+.personas{
+    display: flex;
+    justify-content: space-between; 
+}
+
+@media  screen and (min-width: 1000px){ /*Para el diseño responsivo, el screen indica que el medio donde se trabajará serán las pantallas, y se pone el operador and que tiene una instrucción que indica que el ancho maximo de la pantalla sea de menos de 1000px se ejecuten todas las instrucciones definidas debajo */
+    body{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    input{
+        width: 415px;
+        padding: 5px;
+        background-position: 17px 18px;
+    }
+    .calculadora{
+        width: 990px;
+        flex-direction: row;
+        border-radius: 1.4rem;
+        padding: 2.3rem;
+        height: 479px;
+    }
+    .parteUno{
+        margin-top: 1rem;
+        margin-left: 1.2rem;
+        display: flex;
+        flex-direction: column;
+    }
+    .valorcuenta{
+        margin-bottom: 3.4rem;
+    }
+
+    .propina{
+        grid-template-columns: 135px 135px 135px;
+        row-gap: 1.2em;
+        column-gap: 17px;
+        margin-bottom: 3.2rem;
+    }
+    .propinas{
+     height: 55px;
+    }
+
+    .resultado{
+        margin-left: auto;
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        align-content: space-between;
+        padding: 48px 38px;
+
+    }
+
+    .totalamount, .total{
+        font-size: 55px;
+    }
+
+    .reset{
+        padding: 13px 0 13px 0;
+        margin-top: auto;
+    }
+}
+
+.attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
